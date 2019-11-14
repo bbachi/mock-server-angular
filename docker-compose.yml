@@ -1,0 +1,18 @@
+version: '3.5'
+services:
+  ui:
+    build:
+      context: .
+    container_name: ui
+    ports:
+      - "4200:4200"
+    volumes:
+      - $PWD:/usr/src/app
+  server:
+    build:
+      context: ./server
+    container_name: server
+    ports:
+      - "3070:3700"
+    volumes:
+      - $PWD:/usr/src
